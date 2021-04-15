@@ -1,0 +1,19 @@
+{
+  "name": "@plumbhq/definitions",
+  "version": "1.0.0",
+  "description": "PlumbHQ API Definitions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/plumbhq/definitions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plumbhq/definitions/issues"
+  },
+  "homepage": "https://github.com/plumbhq/definitions#readme"
+}
