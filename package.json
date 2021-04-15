@@ -1,7 +1,7 @@
 {
   "name": "@plumbhq/types-api",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Typed Definitions for PlumbHQ Api",
   "main": "index.js",
   "dependencies": {},
