@@ -3,7 +3,17 @@
   "private": false,
   "version": "1.0.3",
   "description": "Typed Definitions for PlumbHQ Api",
-  "main": "index.js",
+  "keywords": [
+    "plumbhq",
+    "node",
+    "types"
+  ],
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts"
+  ],
+  "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.2",
@@ -16,7 +26,8 @@
     "typescript": "^4.1.5"
   },
   "scripts": {
-    "build": "tsc --build",
+    "prebuild": "rimraf -rf dist",
+    "build": "tsc -p tsconfig.json",
     "prepub": "npm ci && npm run build",
     "pub": "np patch --no-yarn"
   },
@@ -25,7 +36,7 @@
     "url": "git+https://github.com/plumbhq/types-api.git"
   },
   "author": "Ed Stephenson",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/plumbhq/types-api/issues"
   },
