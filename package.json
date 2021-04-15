@@ -16,7 +16,8 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepub": "npm ci && npm run build",
+    "pub": "np patch --no-yarn"
   },
   "repository": {
     "type": "git",
