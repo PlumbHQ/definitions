@@ -1,21 +1,9 @@
 {
-  "name": "@plumbhq/definitions",
+  "name": "@plumbhq/types-api",
   "version": "1.0.0",
-  "description": "PlumbHQ API Definitions",
+  "description": "Typed Definitions for PlumbHQ Api",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/plumbhq/definitions.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/plumbhq/definitions/issues"
-  },
-  "homepage": "https://github.com/plumbhq/definitions#readme",
+  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
@@ -25,5 +13,19 @@
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
-  }
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plumbhq/types-api.git"
+  },
+  "author": "Ed Stephenson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plumbhq/types-api/issues"
+  },
+  "homepage": "https://github.com/plumbhq/types-api#readme"
 }
