@@ -4,13 +4,12 @@ import {
 } from '../../entities/shipment/shipment.entity';
 import { CreateLineItemDto } from '../shared/create-line-item.dto';
 
-type CreateShipmentControllerDtoInterface = Pick<
+type CreateShipmentDtoInterface = Pick<
   ShipmentEntity,
   'clientRef' | 'notifyCustomer' | 'trackingCompany' | 'trackingNumber'
 > & { lineItems: CreateLineItemDto[] };
 
-export class CreateShipmentControllerDto
-  implements CreateShipmentControllerDtoInterface {
+export class CreateShipmentDto implements CreateShipmentDtoInterface {
   clientRef: string;
   notifyCustomer: boolean;
   trackingCompany: ShipmentTrackingCompany;
