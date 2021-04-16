@@ -1,7 +1,7 @@
-import { AddressEntity } from "../address/address.entity";
-import { BaseEntity } from "../base.entity";
-import { LineItemEntity } from "../line-item/line-item.entity";
-import { ShipmentEntity } from "../shipment/shipment.entity";
+import { AddressEntity } from '../address/address.entity';
+import { BaseEntity } from '../base.entity';
+import { LineItemEntity } from '../line-item/line-item.entity';
+import { ShipmentEntity } from '../shipment/shipment.entity';
 
 export type FulfillmentOrderStatus =
   | 'open' // The fulfillment order is ready for fulfillment.
@@ -55,7 +55,7 @@ export enum FulfillmentOrderSubmissionMethodEnum {
   EdiWebhook = 'edi-webhook',
 }
 
-export class FulfillmentOrderInterface extends BaseEntity {
+export class FulfillmentOrderEntity extends BaseEntity {
   uuid: string;
   type: FulfillmentOrderRequestType;
   email: string;

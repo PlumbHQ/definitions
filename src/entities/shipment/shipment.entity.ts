@@ -1,6 +1,6 @@
-import { AddressEntity } from "../address/address.entity";
-import { BaseEntity } from "../base.entity";
-import { LineItemEntity } from "../line-item/line-item.entity";
+import { AddressEntity } from '../address/address.entity';
+import { BaseEntity } from '../base.entity';
+import { LineItemEntity } from '../line-item/line-item.entity';
 
 export type ShipmentEntityStatus =
   | 'pending' // The shipment is pending.
