@@ -1,5 +1,5 @@
-import { AddressEntityInterface } from 'entities/address/address.entity';
-import { LineItemEntityInterface } from 'entities/line-item/line-item.entity';
+import { AddressEntityInterface } from '../../entities/address/address.entity';
+import { LineItemEntityInterface } from '../../entities/line-item/line-item.entity';
 
 export interface EdiPayload {
   poNumber: string;
