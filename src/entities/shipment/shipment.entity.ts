@@ -70,7 +70,6 @@ export type ShipmentTrackingCompany =
 
 export class ShipmentEntity extends BaseEntity {
   clientRef: string;
-  destination: AddressEntity;
   fulfillmentOrder: string;
   notifyCustomer: boolean;
   trackingCompany: ShipmentTrackingCompany;
