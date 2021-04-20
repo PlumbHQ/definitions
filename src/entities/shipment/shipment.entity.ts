@@ -67,7 +67,7 @@ export type ShipmentTrackingCompany =
   | 'Yamato'
   | 'YunExpress';
 
-export class ShipmentEntityInterface extends BaseEntity {
+export class ShipmentEntityInterface {
   clientRef: string;
   fulfillmentOrder: string;
   notifyCustomer: boolean;
