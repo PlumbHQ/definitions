@@ -1,4 +1,3 @@
-import { AddressEntity } from '../address/address.entity';
 import { BaseEntity } from '../base.entity';
 import { LineItemEntity } from '../line-item/line-item.entity';
 
@@ -68,7 +67,7 @@ export type ShipmentTrackingCompany =
   | 'Yamato'
   | 'YunExpress';
 
-export class ShipmentEntity extends BaseEntity {
+export class ShipmentEntityInterface extends BaseEntity {
   clientRef: string;
   fulfillmentOrder: string;
   notifyCustomer: boolean;
@@ -79,3 +78,5 @@ export class ShipmentEntity extends BaseEntity {
   createdAt: string;
   updatedAt: string;
 }
+
+export type ShipmentEntity = BaseEntity & ShipmentEntityInterface;

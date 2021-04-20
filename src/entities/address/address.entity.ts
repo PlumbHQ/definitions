@@ -1,6 +1,6 @@
 import { BaseEntity } from '../base.entity';
 
-export class AddressEntity extends BaseEntity {
+export class AddressEntityInterface extends BaseEntity {
   company?: string;
   firstName?: string;
   lastName?: string;
@@ -11,3 +11,5 @@ export class AddressEntity extends BaseEntity {
   postCode: string;
   country: string;
 }
+
+export type AddressEntity = BaseEntity & AddressEntityInterface;

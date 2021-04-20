@@ -55,7 +55,7 @@ export enum FulfillmentOrderSubmissionMethodEnum {
   EdiWebhook = 'edi-webhook',
 }
 
-export class FulfillmentOrderEntity extends BaseEntity {
+export class FulfillmentOrderEntityInterface {
   uuid: string;
   type: FulfillmentOrderRequestType;
   email: string;
@@ -67,3 +67,6 @@ export class FulfillmentOrderEntity extends BaseEntity {
   submittedAt?: string | null;
   submissionMethod?: FulfillmentOrderSubmissionMethod | null;
 }
+
+export type FulfillmentOrderEntity = BaseEntity &
+  FulfillmentOrderEntityInterface;

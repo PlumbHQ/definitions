@@ -1,7 +1,9 @@
 import { BaseEntity } from '../base.entity';
 
-export class LineItemEntity extends BaseEntity {
+export class LineItemEntityInterface {
   sku: string;
   description: string;
   quantity: number;
 }
+
+export type LineItemEntity = BaseEntity & LineItemEntityInterface;
