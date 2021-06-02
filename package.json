@@ -28,8 +28,8 @@
   "scripts": {
     "prebuild": "rimraf -rf dist",
     "build": "tsc -p tsconfig.json",
-    "prepub": "npm ci && npm run build",
-    "pub": "np patch --no-yarn"
+    "predeploy": "npm ci && npm run build",
+    "deploy": "np patch --no-yarn"
   },
   "repository": {
     "type": "git",
