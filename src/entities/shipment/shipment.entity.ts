@@ -1,4 +1,4 @@
-import { BaseEntity } from '../base.entity';
+import { BaseEntity, DatesEntity } from '../base.entity';
 import { LineItemEntity } from '../line-item/line-item.entity';
 
 export type ShipmentEntityStatus =
@@ -79,4 +79,4 @@ export class ShipmentEntityInterface {
   updatedAt: string;
 }
 
-export type ShipmentEntity = BaseEntity & ShipmentEntityInterface;
+export type ShipmentEntity = BaseEntity & ShipmentEntityInterface & DatesEntity;

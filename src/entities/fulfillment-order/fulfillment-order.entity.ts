@@ -1,6 +1,6 @@
 import { OrderEntity } from '../order/order.entity';
 import { AddressEntity } from '../address/address.entity';
-import { BaseEntity } from '../base.entity';
+import { BaseEntity, DatesEntity } from '../base.entity';
 import { LineItemEntity } from '../line-item/line-item.entity';
 import { ShipmentEntity } from '../shipment/shipment.entity';
 
@@ -71,4 +71,5 @@ export class FulfillmentOrderEntityInterface {
 }
 
 export type FulfillmentOrderEntity = BaseEntity &
-  FulfillmentOrderEntityInterface;
+  FulfillmentOrderEntityInterface &
+  DatesEntity;
