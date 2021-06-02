@@ -1,3 +1,4 @@
+import { OrderEntity } from 'entities/order/order.entity';
 import { AddressEntity } from '../address/address.entity';
 import { BaseEntity } from '../base.entity';
 import { LineItemEntity } from '../line-item/line-item.entity';
@@ -60,6 +61,7 @@ export class FulfillmentOrderEntityInterface {
   type: FulfillmentOrderRequestType;
   email: string;
   destination: AddressEntity;
+  order: string | OrderEntity;
   lineItems: LineItemEntity[];
   shipments: ShipmentEntity[];
   status: FulfillmentOrderStatus;
