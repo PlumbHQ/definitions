@@ -1,4 +1,4 @@
-import { OrderEntity } from 'entities/order/order.entity';
+import { OrderEntity } from '../order/order.entity';
 import { AddressEntity } from '../address/address.entity';
 import { BaseEntity } from '../base.entity';
 import { LineItemEntity } from '../line-item/line-item.entity';
