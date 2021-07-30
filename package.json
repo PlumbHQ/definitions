@@ -31,6 +31,7 @@
   "scripts": {
     "prebuild": "rimraf -rf dist",
     "build": "tsc -p tsconfig.json",
+    "test": "",
     "predeploy": "npm ci && npm run build",
     "deploy": "np patch --no-yarn"
   },
