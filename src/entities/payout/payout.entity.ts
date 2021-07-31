@@ -1,4 +1,3 @@
-import { sumBy } from 'lodash';
 import { BaseEntity, DatesEntity } from '../base.entity';
 import { PayoutLineItemEntity } from './payout-line-item.entity';
 
@@ -20,6 +19,7 @@ export enum PayoutStatusEnum {
  */
 export class PayoutInterface extends BaseEntity implements DatesEntity {
   uuid?: string; // Internal generated UUID for the order
+  date: string;
   status: PayoutStatus;
   fulfillmentPartner: string;
   lineItems: PayoutLineItemEntity[];
