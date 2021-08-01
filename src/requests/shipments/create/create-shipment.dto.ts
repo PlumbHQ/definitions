@@ -13,6 +13,7 @@ type CreateShipmentDtoInterface = Required<
 
 export class CreateShipmentDto implements CreateShipmentDtoInterface {
   clientRef: string;
+  shippedAt: string;
   notifyCustomer: boolean;
   trackingCompany: ShipmentTrackingCompany;
   trackingNumber: string;
