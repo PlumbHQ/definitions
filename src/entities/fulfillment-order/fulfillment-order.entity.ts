@@ -61,13 +61,15 @@ export class FulfillmentOrderEntityInterface {
   type: FulfillmentOrderRequestType;
   email: string;
   destination: AddressEntity;
-  order: string | OrderEntity;
+  order?: string | OrderEntity;
   lineItems: LineItemEntity[];
   shipments: ShipmentEntity[];
   status: FulfillmentOrderStatus;
   requestStatus: FulfillmentOrderRequestStatus;
   submittedAt?: string | null;
   submissionMethod?: FulfillmentOrderSubmissionMethod | null;
+  closedAt?: string;
+  payout?: string;
 }
 
 export type FulfillmentOrderEntity = BaseEntity &
