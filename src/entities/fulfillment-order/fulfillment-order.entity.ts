@@ -58,7 +58,6 @@ export enum FulfillmentOrderSubmissionMethodEnum {
 
 export class FulfillmentOrderEntityInterface {
   uuid: string;
-  type: FulfillmentOrderRequestType;
   email: string;
   destination: AddressEntity;
   order?: string | OrderEntity;
