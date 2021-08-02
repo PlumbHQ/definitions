@@ -75,6 +75,7 @@ export class ShipmentEntityInterface {
   trackingNumber: string;
   lineItems: LineItemEntity[];
   status: ShipmentEntityStatus;
+  shippedAt: string;
   createdAt: string;
   updatedAt: string;
 }

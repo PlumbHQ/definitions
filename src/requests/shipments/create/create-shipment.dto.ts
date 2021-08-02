@@ -7,7 +7,11 @@ import { CreateLineItemDto } from '../../shared/create-line-item.dto';
 type CreateShipmentDtoInterface = Required<
   Pick<
     ShipmentEntity,
-    'clientRef' | 'notifyCustomer' | 'trackingCompany' | 'trackingNumber'
+    | 'clientRef'
+    | 'notifyCustomer'
+    | 'trackingCompany'
+    | 'trackingNumber'
+    | 'shippedAt'
   > & { lineItems: CreateLineItemDto[] }
 >;
 
