@@ -7,17 +7,12 @@ import { CreateLineItemDto } from '../../shared/create-line-item.dto';
 type CreateShipmentDtoInterface = Required<
   Pick<
     ShipmentEntity,
-    | 'clientRef'
-    | 'notifyCustomer'
-    | 'trackingCompany'
-    | 'trackingNumber'
-    | 'shippedAt'
+    'clientRef' | 'notifyCustomer' | 'trackingCompany' | 'trackingNumber'
   > & { lineItems: CreateLineItemDto[] }
 >;
 
 export class CreateShipmentDto implements CreateShipmentDtoInterface {
   clientRef: string;
-  shippedAt: string;
   notifyCustomer: boolean;
   trackingCompany: ShipmentTrackingCompany;
   trackingNumber: string;
