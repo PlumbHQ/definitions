@@ -5,33 +5,59 @@ import { LineItemEntity } from '../line-item/line-item.entity';
 import { ShipmentEntity } from '../shipment/shipment.entity';
 
 export type FulfillmentOrderStatus =
-  | 'scheduled' // The fulfillment order is deferred and will be ready for fulfillment after the datetime specified in fulfill_at.
-  | 'open' // The fulfillment order is ready for fulfillment.
-  | 'in_progress' // The fulfillment order is being processed.
-  | 'cancelled' // The fulfillment order has been cancelled by PlumbHQ.
-  | 'incomplete' // The fulfillment order cannot be completed as requested.
-  | 'closed'; // The fulfillment order has been completed and closed.
+  | 'scheduled' // One of two initial states: The Purchase Order is deferred until after the datetime specified in fulfill_at. @CreatedAt
+  | 'open' // One of two initial states: The Purchase Order is ready to be fulfilled. @CreatedAt
+  | 'cancelled' // PlumbHQ cancelled the Purchase Order. @CancelledAt
+  | 'in_progress' // The Purchase Order is being fulfilled.
+  | 'closed' // All shipments for the Purchase Order have finished. @ClosedAt
+  | 'payment_allocated' // The Purchase Order has been allocated to a Payout.
+  | 'payment_processed' // The associated Payout has been processed. @PaidAt
+  | 'archived'; // The Purchase Order is now closed. No more tasks to complete. @ClosedAt
+
+export type FulfillmentOrderRequestStatus =
+  | 'unsubmitted' // The initial state for a newly created FulfillmentOrder.
+  | 'submitted' // PlumbHQ has sent the Purchase Order to the Supplier. @SubmittedAt
+  | 'accepted' // The supplier accepted PlumbHQ's request. @AcceptedAt
+  | 'rejected' // The supplier rejected PlumbHQ's request. @RejectedAt
+  | 'cancellation_requested' // PlumbHQ has requested to cancel the Purchase Order
+  | 'cancellation_accepted' // The supplier accepted PlumbHQ's request to cancel the Purchase Order
+  | 'cancellation_rejected'; // The supplier rejected PlumbHQ's request to cancel the Purchase Order
+
+export type FulfillmentOrderFulfillmentStatus =
+  | 'scheduled' // One of two initial states: The Purchase Order has been deferred until the time specified in fulfill_at.
+  | 'open' // One of two initial states: The Purchase Order is ready to be fulfilled.
+  | 'in_progress' // The Purchase Order is being fulfilled.
+  | 'cancelled' // PlumbHQ cancelled fulfillment. ?? cancelled_incomplete
+  | 'incomplete' // Supplier has marked Purchase Order as fulfilled, but the Purchase Order is incomplete. @FulfilledAt
+  | 'complete'; // Supplier has marked Purchase Order as fulfilled and the Purchase Order is complete. @FulfilledAt
 
 export enum FulfillmentOrderStatusEnum {
   Scheduled = 'scheduled',
   Open = 'open',
   InProgress = 'in_progress',
-  Cancelled = 'cancelled',
-  Incomplete = 'incomplete',
+  Fulfilled = 'fulfilled',
+  PaymentAllocated = 'payment_allocated',
+  PaymentProcessed = 'payment_processed',
   Closed = 'closed',
 }
-
-export type FulfillmentOrderRequestStatus =
-  | 'unsubmitted' // The initial state for a newly created FulfillmentOrder.
-  | 'submitted' // PlumbHQ has requested fulfillment from the supplier but they have not responded.
-  | 'accepted' // The supplier accepted the PlumbHQ's request.
-  | 'rejected'; // The supplier rejected the PlumbHQ's request.
 
 export enum FulfillmentOrderRequestStatusEnum {
   Unsubmitted = 'unsubmitted',
   Submitted = 'submitted',
   Accepted = 'accepted',
   Rejected = 'rejected',
+  CancellationRequested = 'cancellation_requested',
+  CancellationAccepted = 'cancellation_accepted',
+  CancellationRejected = 'cancellation_rejected',
+}
+
+export enum FulfillmentOrderFulfillmentStatusEnum {
+  Scheduled = 'scheduled',
+  Open = 'open',
+  InProgress = 'in_progress',
+  Cancelled = 'cancelled',
+  Incomplete = 'incomplete',
+  Complete = 'complete',
 }
 
 export type FulfillmentOrderRequestType =
@@ -63,6 +89,7 @@ export class FulfillmentOrderEntityInterface {
   shipments: ShipmentEntity[];
   status: FulfillmentOrderStatus;
   requestStatus: FulfillmentOrderRequestStatus;
+  fulfillmentStatus: FulfillmentOrderFulfillmentStatus;
   submittedAt?: string | null;
   submissionMethod?: FulfillmentOrderSubmissionMethod | null;
   closedAt?: string;
