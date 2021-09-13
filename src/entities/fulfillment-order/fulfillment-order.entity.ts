@@ -25,7 +25,7 @@ export type FulfillmentOrderRequestStatus =
 
 export type FulfillmentOrderFulfillmentStatus =
   | 'unfulfilled' // Purchase Order is not fulfilled.
-  | 'partial' // Purchase Order is partially complete
+  | 'partially_fulfilled' // Purchase Order is partially complete
   | 'complete'; // Purchase Order is complete.
 
 export enum FulfillmentOrderStatusEnum {
@@ -49,11 +49,8 @@ export enum FulfillmentOrderRequestStatusEnum {
 }
 
 export enum FulfillmentOrderFulfillmentStatusEnum {
-  Scheduled = 'scheduled',
-  Open = 'open',
-  InProgress = 'in_progress',
-  Cancelled = 'cancelled',
-  Incomplete = 'incomplete',
+  Unfulfilled = 'unfulfilled',
+  PartiallyFulfilled = 'partially_fulfilled',
   Complete = 'complete',
 }
 
