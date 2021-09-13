@@ -31,11 +31,12 @@ export type FulfillmentOrderFulfillmentStatus =
 export enum FulfillmentOrderStatusEnum {
   Scheduled = 'scheduled',
   Open = 'open',
+  Cancelled = 'cancelled',
   InProgress = 'in_progress',
-  Fulfilled = 'fulfilled',
+  Closed = 'closed',
   PaymentAllocated = 'payment_allocated',
   PaymentProcessed = 'payment_processed',
-  Closed = 'closed',
+  Archived = 'archived',
 }
 
 export enum FulfillmentOrderRequestStatusEnum {
