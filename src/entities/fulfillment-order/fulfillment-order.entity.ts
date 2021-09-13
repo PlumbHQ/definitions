@@ -24,12 +24,9 @@ export type FulfillmentOrderRequestStatus =
   | 'cancellation_rejected'; // The supplier rejected PlumbHQ's request to cancel the Purchase Order
 
 export type FulfillmentOrderFulfillmentStatus =
-  | 'scheduled' // One of two initial states: The Purchase Order has been deferred until the time specified in fulfill_at.
-  | 'open' // One of two initial states: The Purchase Order is ready to be fulfilled.
-  | 'in_progress' // The Purchase Order is being fulfilled.
-  | 'cancelled' // PlumbHQ cancelled fulfillment. ?? cancelled_incomplete
-  | 'incomplete' // Supplier has marked Purchase Order as fulfilled, but the Purchase Order is incomplete. @FulfilledAt
-  | 'complete'; // Supplier has marked Purchase Order as fulfilled and the Purchase Order is complete. @FulfilledAt
+  | 'unfulfilled' // Purchase Order is not fulfilled.
+  | 'partial' // Purchase Order is partially complete
+  | 'complete'; // Purchase Order is complete.
 
 export enum FulfillmentOrderStatusEnum {
   Scheduled = 'scheduled',
