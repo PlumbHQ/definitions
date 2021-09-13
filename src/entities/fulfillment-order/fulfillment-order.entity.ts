@@ -85,9 +85,17 @@ export class FulfillmentOrderEntityInterface {
   status: FulfillmentOrderStatus;
   requestStatus: FulfillmentOrderRequestStatus;
   fulfillmentStatus: FulfillmentOrderFulfillmentStatus;
-  submittedAt?: string | null;
   submissionMethod?: FulfillmentOrderSubmissionMethod | null;
+
+  acceptedAt?: string;
+  archivedAt?: string;
+  cancelledAt?: string;
   closedAt?: string;
+  createdAt?: string;
+  paidAt?: string;
+  rejectedAt?: string;
+  submittedAt?: string;
+
   payout?: string;
 }
 
