@@ -1,7 +1,7 @@
 {
   "name": "@plumbhq/types-api",
   "private": false,
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "Typed Definitions for PlumbHQ Api",
   "keywords": [
     "plumbhq",
