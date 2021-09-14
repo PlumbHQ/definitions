@@ -10,9 +10,10 @@ export type FulfillmentOrderStatus =
   | 'cancelled' // PlumbHQ cancelled the Purchase Order. @CancelledAt
   | 'in_progress' // The Purchase Order is being fulfilled.
   | 'closed' // All shipments for the Purchase Order have finished. @ClosedAt
-  | 'payment_allocated' // The Purchase Order has been allocated to a Payout.
-  | 'payment_processed' // The associated Payout has been processed. @PaidAt
-  | 'archived'; // The Purchase Order is now closed. No more tasks to complete. @ClosedAt
+  | 'payment_scheduled' // The Purchase Order has been allocated to a Payout. @ScheduledAt
+  | 'payment_allocated' // The associated Payout has been processed.
+  | 'paid' // The associated Payout has been paid. @PaidAt
+  | 'archived'; // The Purchase Order is now closed. No more tasks to complete. @ArchivedAt
 
 export type FulfillmentOrderRequestStatus =
   | 'unsubmitted' // The initial state for a newly created FulfillmentOrder.
@@ -34,8 +35,9 @@ export enum FulfillmentOrderStatusEnum {
   Cancelled = 'cancelled',
   InProgress = 'in_progress',
   Closed = 'closed',
+  PaymentScheduled = 'payment_scheduled',
   PaymentAllocated = 'payment_allocated',
-  PaymentProcessed = 'payment_processed',
+  Paid = 'paid',
   Archived = 'archived',
 }
 
@@ -87,14 +89,15 @@ export class FulfillmentOrderEntityInterface {
   fulfillmentStatus: FulfillmentOrderFulfillmentStatus;
   submissionMethod?: FulfillmentOrderSubmissionMethod | null;
 
+  createdAt?: string;
+  submittedAt?: string;
   acceptedAt?: string;
-  archivedAt?: string;
+  rejectedAt?: string;
   cancelledAt?: string;
   closedAt?: string;
-  createdAt?: string;
+  scheduledAt?: string;
   paidAt?: string;
-  rejectedAt?: string;
-  submittedAt?: string;
+  archivedAt?: string;
 
   payout?: string;
 }
