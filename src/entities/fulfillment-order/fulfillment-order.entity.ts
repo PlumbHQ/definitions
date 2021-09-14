@@ -96,6 +96,7 @@ export class FulfillmentOrderEntityInterface {
   cancelledAt?: string;
   closedAt?: string;
   scheduledAt?: string;
+  allocatedAt?: string;
   paidAt?: string;
   archivedAt?: string;
 
