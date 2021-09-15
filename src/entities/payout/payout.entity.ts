@@ -23,6 +23,18 @@ export class PayoutInterface extends BaseEntity implements DatesEntity {
   status: PayoutStatus;
   fulfillmentPartner: string;
   lineItems: PayoutLineItemEntity[];
+
+  paymentMetaData?: {
+    reference: string;
+    sortCode: string;
+    lastFour: string;
+  };
+
+  lockedAt?: string;
+  scheduledAt?: string;
+  paidAt?: string;
+  archivedAt?: string;
+
   createdAt: string;
   updatedAt: string;
 }
