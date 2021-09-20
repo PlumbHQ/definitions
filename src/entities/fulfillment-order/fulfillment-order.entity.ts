@@ -67,14 +67,12 @@ export enum FulfillmentOrderRequestTypeEnum {
 }
 
 export type FulfillmentOrderSubmissionMethod =
-  | 'webhook-notification'
-  | 'edi-email'
-  | 'edi-webhook';
+  | 'EmailChannel'
+  | 'WebhookChannel';
 
 export enum FulfillmentOrderSubmissionMethodEnum {
-  WebhookNotification = 'webhook-notification',
-  EdiEmail = 'edi-email',
-  EdiWebhook = 'edi-webhook',
+  EmailChannel = 'EmailChannel',
+  WebhookChannel = 'WebhookChannel',
 }
 
 export class FulfillmentOrderEntityInterface {
