@@ -3,6 +3,7 @@ import { AddressEntity } from '../address/address.entity';
 import { BaseEntity, DatesEntity } from '../base.entity';
 import { LineItemEntity } from '../line-item/line-item.entity';
 import { ShipmentEntity } from '../shipment/shipment.entity';
+import { ShippingLineEntity } from 'entities/line-item/shipping-line-item.entity';
 
 export type FulfillmentOrderStatus =
   | 'scheduled' // One of two initial states: The Purchase Order is deferred until after the datetime specified in fulfill_at. @CreatedAt
@@ -81,6 +82,7 @@ export class FulfillmentOrderEntityInterface {
   destination: AddressEntity;
   order?: string | OrderEntity;
   lineItems: LineItemEntity[];
+  shippingLines: ShippingLineEntity[];
   shipments: ShipmentEntity[];
   status: FulfillmentOrderStatus;
   requestStatus: FulfillmentOrderRequestStatus;
