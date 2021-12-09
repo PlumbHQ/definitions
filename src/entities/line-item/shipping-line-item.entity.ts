@@ -1,7 +1,7 @@
 import { BaseEntity } from '../base.entity';
 
 export class ShippingLineEntityInterface {
-  sku?: string;
+  code?: string;
   description: string;
   price: number;
 }
